@@ -18,6 +18,7 @@ pipeline {
     stage("Build Application"){
       steps{
         sh 'mvn clean package -X'
+        sh 'mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.teamtreehouse.com -DartifactId=file-spy -B'
         
       }
       
