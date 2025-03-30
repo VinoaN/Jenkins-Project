@@ -2,6 +2,7 @@ pipeline {
   agent { label 'Jenkins-Agent' }
   tools {
     jdk 'Java17'
+    maven 'Maven-3.8.3'
   }
   stages{
     stage("Cleanup Workspace"){
@@ -16,7 +17,7 @@ pipeline {
     }
     stage("Build Application"){
       steps{
-        sh ' ' '
+        sh 'mvn clean package'
         
       }
       
