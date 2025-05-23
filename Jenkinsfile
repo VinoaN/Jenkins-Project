@@ -10,7 +10,7 @@ pipeline {
         cleanWs()
       }
     }
-    stage("Checkout from SCM"){
+    stage("Checkout from SCM GIT"){
       steps{
         git branch : 'main' , credentialsId: 'github' , url : 'https://github.com/VinoaN/Jenkins-Project'
       }
