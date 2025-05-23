@@ -15,7 +15,7 @@ pipeline {
         git branch : 'main' , credentialsId: 'github' , url : 'https://github.com/VinoaN/Jenkins-Project'
       }
     }
-    stage("Build Application"){
+    stage("Build Application using Maven"){
       steps{
         sh 'mvn clean package'
         
