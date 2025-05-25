@@ -20,13 +20,10 @@ pipeline {
             
             }
         }
+   stage('Test Results') {
+            steps {
+                junit allowEmptyResults: true, testResults: '**/target/surefire-reports/*.xml'
+            }
+        }
      }
-    post {
-       always {
-script {
-          junit allowEmptyResults: true,
-        testResults: '*/test-reports/.xml'
-      }
-      }
-   } 
 }
